@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR CODE GENERATOR</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      background: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      color: #333;
+      letter-spacing: 1px;
+      font-weight: bold;
+      padding: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 300px;
+      height: 45px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    button {
+      background: #3498db;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #2980b9;
+    }
+
+    #imgBox {
+      width: 200px;
+      border-radius: 5px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s;
+    }
+
+    #imgBox img {
+      width: 100%;
+      padding: 10px;
+    }
+
+    #imgBox.show-img {
+      max-height: 300px;
+      margin: 20px auto;
+      border: 1px solid #d1d1d1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>QR CODE GENERATOR</h1>
+    </div>
+    <p>Enter your text or URL</p>
+    <input type="text" placeholder="Text or URL" id="qrtext">
+    <div id="imgBox">
+      <img src="" id="qrImage">
+    </div>
+    <button onclick="generateQR();">Generate QR Code</button>
+  </div>
+</body>
+<script src="index.js"></script>
+</html>
